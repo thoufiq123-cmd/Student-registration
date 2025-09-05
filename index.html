@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student Registration</h2>
+      <form id="studentForm" novalidate>
+        <input type="hidden" id="studentId" />
+
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          required
+          placeholder="Enter your full name"
+        />
+
+        <label for="phone">Phone</label>
+        <input
+          type="number"
+          id="phone"
+          pattern="[0-9][0-9]{9}"
+          required
+          placeholder="10-digit phone number"
+          title="Phone must start with 7, 8, or 9 and be 10 digits long"
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          required
+          placeholder="example@domain.com"
+        />
+
+        <div class="btn-group">
+          <button type="submit">Submit</button>
+          <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+      </form>
+
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>S No.</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </body>
+</html>
